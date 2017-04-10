@@ -76,14 +76,14 @@ function getFunctionCn(cn, className, theme) {
  *     <MyBlock />
  *     // <div class="my-block my-block_theme_on-color"></div>
  *
- *     <MyBlock theme="alfa-on-white" />
+ *     <MyBlock theme="on-white" />
  *     // <div class="my-block my-block_theme_on-white"></div>
  *
  *     <MyBlock className="additional-class" />
  *     // <div class="my-block my-block_theme_on-color additional-class"></div>
  * ```
  *
- * You can `CnDecorator` as dependency injector to flexibale change component's composition.
+ * You can `CnDecorator` as dependency injector to flexibale change component\'s composition.
  *
  * ```
  * // phone-input.jsx
