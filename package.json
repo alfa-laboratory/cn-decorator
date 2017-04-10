@@ -20,7 +20,8 @@
     "pub-copy": "rsync -a . ./.publish --exclude ./.publish",
     "pub-build": "cd ./.publish && NODE_ENV=production webpack",
     "pub-main": "echo 'module.exports = require('./dist/cn.js');' > ./.publish/index.js",
-    "pub": "npm run pub-clean && npm run pub-copy && npm run pub-build && npm run pub-main"
+    "pub-npmjs": "cd ./.publish && npm publish .",
+    "pub": "npm run pub-clean && npm run pub-copy && npm run pub-build && npm run pub-main && npm run pub-npmjs"
   },
   "author": "Good guys from Alfa Laboratory",
   "license": "MIT",
