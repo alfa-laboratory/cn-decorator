@@ -1,6 +1,6 @@
 {
   "name": "cn-decorator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Best way to use BEM with React",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test-benchmark": "NODE_ENV=production BENCHMARK=1 karma start",
     "quality-check": "npm run lint && npm run test",
     "precommit": "npm run quality-check",
-    "_changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -c changelog-config.js",
+    "_changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -c changelog.config.js",
     "release-patch": "npm version patch -m 'chore(*): patch version'",
     "release-minor": "npm version minor -m 'chore(*): minor version'",
     "release-major": "npm version major -m 'chore(*): major version'",
