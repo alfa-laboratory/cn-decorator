@@ -24,10 +24,13 @@
   },
   "author": "Good guys from Alfa Laboratory",
   "license": "MIT",
+  "dependencies": {
+      "bem-cn-fast": "^1.0.2",
+      "prop-types": "^15.5.6"
+  },
   "devDependencies": {
     "arui-presets": "^2.0.2",
     "babel-core": "^6.4.5",
-    "bem-cn-fast": "^1.0.2",
     "benchmark": "^2.1.2",
     "chai": "^3.5.0",
     "chai-dom": "^1.4.0",
@@ -54,7 +57,6 @@
     "karma-webpack": "^1.8.1",
     "mocha": "^3.0.0",
     "phantomjs-prebuilt": "^2.1.12",
-    "prop-types": "^15.5.6",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
     "webpack": "^1.14.0",
