@@ -1,0 +1,7 @@
+npm-debug.log
+yarn-error.log
+
+coverage/
+test-results.xml
+
+.DS_Store
