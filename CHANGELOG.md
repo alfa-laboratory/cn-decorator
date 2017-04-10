@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+## 1.0.4 (2017-04-10)
+
+
+### Features
+
+* **webpack.config.js:** remove minification from production build ([cc46ba4](https://github.com/alfa-laboratory/cn-decorator/commit/cc46ba4))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2017-04-10)
 
