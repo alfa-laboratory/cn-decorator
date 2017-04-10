@@ -17,19 +17,15 @@ let sharedContainer = null;
  * @param {Object} jsx JSX for render.
  * @param {Object} [options] Render options.
  * @param {String} [options.css] Additional CSS.
- * @param {Node} [options.container] Контейнер, в который нарендерить компонент.
  * @returns {TestWrapper}
  */
 export function render(jsx, options = {}) {
-    let container = options.container;
-
-    if (!container) {
-        if (!sharedContainer) {
-            sharedContainer = document.createElement('div');
-            document.body.appendChild(sharedContainer);
-        }
-        container = sharedContainer;
+    if (!sharedContainer) {
+        sharedContainer = document.createElement('div');
+        document.body.appendChild(sharedContainer);
     }
+
+    let container = sharedContainer;
 
     if (options.css) {
         container.setAttribute('style', options.css);
