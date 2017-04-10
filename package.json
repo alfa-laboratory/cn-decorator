@@ -1,6 +1,6 @@
 {
   "name": "cn-decorator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Best way to use BEM with React",
   "main": "index.js",
   "scripts": {
@@ -26,8 +26,8 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MIT",
   "dependencies": {
-      "bem-cn-fast": "^1.0.2",
-      "prop-types": "^15.5.6"
+    "bem-cn-fast": "^1.0.2",
+    "prop-types": "^15.5.6"
   },
   "devDependencies": {
     "arui-presets": "^2.0.2",
