@@ -1,3 +1,18 @@
+<a name="1.0.5"></a>
+## 1.0.5 (2017-04-11)
+
+
+### Bug Fixes
+
+* use correct compile process ([c025666](https://github.com/alfa-laboratory/cn-decorator/commit/c025666))
+
+
+### Features
+
+* **tools/test-utils:** remove container option ([ab7682d](https://github.com/alfa-laboratory/cn-decorator/commit/ab7682d))
+
+
+
 <a name="1.0.4"></a>
 ## 1.0.4 (2017-04-10)
 
