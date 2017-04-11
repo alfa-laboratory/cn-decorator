@@ -2,7 +2,7 @@
   "name": "cn-decorator",
   "version": "1.0.4",
   "description": "Best way to use BEM with React",
-  "main": "index.js",
+  "main": "cn.js",
   "scripts": {
     "build": "webpack",
     "lint": "eslint ./*.js ./src/ --ext .js,.jsx",
@@ -16,12 +16,8 @@
     "release-major": "npm version major -m 'chore(*): major version'",
     "version": "git fetch --tags && npm run _changelog && git add CHANGELOG.md",
     "postversion": "git push origin master && git push --tags && npm run pub",
-    "pub-clean": "rm -rf ./.publish",
-    "pub-copy": "rsync -a . ./.publish --exclude ./.publish",
-    "pub-build": "cd ./.publish && NODE_ENV=production webpack",
-    "pub-main": "echo \"module.exports = require('./dist/cn.js');\" > ./.publish/index.js",
-    "pub-npmjs": "cd ./.publish && npm publish .",
-    "pub": "npm run pub-clean && npm run pub-copy && npm run pub-build && npm run pub-main && npm run pub-npmjs"
+    "compile": "gulp --cwd . --gulpfile ./node_modules/library-utils/gulpfile.js compile",
+    "pub": "npm run compile && cd .publish && npm publish"
   },
   "author": "Good guys from Alfa Laboratory",
   "license": "MIT",
@@ -56,6 +52,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.1",
+    "library-utils": "^1.1.0",
     "mocha": "^3.0.0",
     "phantomjs-prebuilt": "^2.1.12",
     "react": "^15.5.3",
