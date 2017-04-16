@@ -226,7 +226,7 @@ class MyComponent extends React.Component {
 
 // my-extended-component.css
 import cn from 'cn-decorator';
-import React from 'react';
+import MyComponent from './my-component';
 import './my-extended-component.css';
 
 @cn('extended-block')
