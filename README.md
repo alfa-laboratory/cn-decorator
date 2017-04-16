@@ -8,8 +8,8 @@ Best way to use BEM with React
 
 * [BEM methodology for React](#bem-methodology-for-react-)
 * [Themes management](#themes-management-)
-* [`className` proxy](#className-proxy-)
-* [BEM overrides](#overrides-)
+* [`className` proxy](#classname-proxy-)
+* [BEM overrides](#bem-overrides-)
 * [DI Components](#di-components-)
 
 ## BEM methodology for React <a href="#bem-methodology-for-react"></a>
