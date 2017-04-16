@@ -203,6 +203,41 @@ class App extends React.Component {
 
 ## BEM overrides <a href="#bem-overrides"></a>
 
+Using `cn decorator` you can easy seperate your logic from styles.
+Just use `extends` pattern to override base BEM block name.
+Use this feature to override component's styles.
+
+```javascript
+// my-component.css
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return (
+            <div className={ cn }>
+                <span className={ cn('some-element') } />
+            </div>
+        );
+    }
+}
+
+// my-extended-component.css
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-extended-component.css';
+
+@cn('extended-block')
+class MyExtendedComponent extends MyComponent {}
+
+// Render result:
+// <div class="extended-block">
+//     <span class="extended-block__some-element"></span>
+// </div>
+```
+
 ## DI Components <a href="#di-components"></a>
 
 ## Utils
