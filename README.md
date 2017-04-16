@@ -174,6 +174,20 @@ class App extends React.Component {
 
 ## DI Components <a href="#di-components"></a>
 
+## Utils
+
+Check with linters
+
+`npm run lint`
+
+Check with unit tests
+
+`npm run test`
+
+Benckmarks
+
+`npm run test-benchmark`
+
 ## License
 
 ```
