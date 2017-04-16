@@ -102,6 +102,72 @@ class MyComponent extends React.Component {
 
 ## Themes management <a href="#themes"></a>
 
+`cn decorator` provides system for themes managements.
+You can setup your themes using `cn.create` factory.
+`cn decorator` uses first theme as default.
+
+### Basic example
+
+```javascript
+// my-component.js
+import cnDecorator from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+const cn = cnDecorator.create('on-color', 'on-white');
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return <div className={ cn } />;
+    }
+}
+
+// app.js
+import React from 'react';
+import MyComponent from './my-component';
+
+class App extends React.Component {
+    render() {
+        return <MyComponent />;
+    }
+}
+
+// Render result:
+// <div class="block-name block-name_theme_on-color"></div>
+```
+
+### Switch theme with public prop
+
+```javascript
+// my-component.js
+import cnDecorator from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+const cn = cnDecorator.create('on-color', 'on-white');
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return <div className={ cn } />;
+    }
+}
+
+// app.js
+import React from 'react';
+import MyComponent from './my-component';
+
+class App extends React.Component {
+    render() {
+        return <MyComponent theme="on-white" />;
+    }
+}
+
+// Render result:
+// <div class="block-name block-name_theme_on-white"></div>
+```
+
 ## `className` proxy <a href="#className"></a>
 
 ## BEM overrides <a href="#className"></a>
