@@ -76,7 +76,7 @@ class MyComponent extends React.Component {
 // <div class="block-name block-name_mod1 block-name_mod2_value"></div>
 ```
 
-## Mods for elements
+### Mods for elements
 
 ```javascript
 import cn from 'cn-decorator';
