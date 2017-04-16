@@ -6,13 +6,13 @@ Best way to use BEM with React
 
 ## Features
 
-* [BEM methodology for React](#bem-react)
-* [Themes management](#themes)
-* [`className` proxy](#className)
+* [BEM methodology for React](#bem-methodology-for-react)
+* [Themes management](#themes-management)
+* [`className` proxy](#className-proxy)
 * [BEM overrides](#overrides)
 * [DI Components](#di-components)
 
-## BEM methodology for React <a href="#bem-react"></a>
+## BEM methodology for React <a href="#bem-methodology-for-react"></a>
 
 `cn decorator` provides simplest ability to generate BEM methodology classes inside React Component.
 
@@ -100,7 +100,7 @@ class MyComponent extends React.Component {
 // </div>
 ```
 
-## Themes management <a href="#themes"></a>
+## Themes management <a href="#themes-management"></a>
 
 `cn decorator` provides system for themes managements.
 You can setup your themes using `cn.create` factory.
@@ -168,9 +168,9 @@ class App extends React.Component {
 // <div class="block-name block-name_theme_on-white"></div>
 ```
 
-## `className` proxy <a href="#className"></a>
+## `className` proxy <a href="#className-proxy"></a>
 
-## BEM overrides <a href="#className"></a>
+## BEM overrides <a href="#bem-overrides"></a>
 
 ## DI Components <a href="#di-components"></a>
 
