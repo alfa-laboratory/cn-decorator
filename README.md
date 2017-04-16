@@ -114,7 +114,7 @@ import cnDecorator from 'cn-decorator';
 import React from 'react';
 import './my-component.css';
 
-const cn = cnDecorator.create('on-color', 'on-white');
+const cn = cnDecorator.create(['on-color', 'on-white']);
 
 @cn('block-name')
 class MyComponent extends React.Component {
@@ -145,7 +145,7 @@ import cnDecorator from 'cn-decorator';
 import React from 'react';
 import './my-component.css';
 
-const cn = cnDecorator.create('on-color', 'on-white');
+const cn = cnDecorator.create(['on-color', 'on-white']);
 
 @cn('block-name')
 class MyComponent extends React.Component {
