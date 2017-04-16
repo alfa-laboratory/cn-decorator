@@ -170,6 +170,37 @@ class App extends React.Component {
 
 ## `className` proxy <a href="#className-proxy"></a>
 
+`cn decorator` adds ability to React Component to proxy `className` prop.
+
+### Example
+
+```javascript
+// my-component.js
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return <div className={ cn } />;
+    }
+}
+
+// app.js
+import React from 'react';
+import MyComponent from './my-component';
+
+class App extends React.Component {
+    render() {
+        return <MyComponent className="custom-class" />;
+    }
+}
+
+// Render result:
+// <div class="block-name custom-class"></div>
+```
+
 ## BEM overrides <a href="#bem-overrides"></a>
 
 ## DI Components <a href="#di-components"></a>
