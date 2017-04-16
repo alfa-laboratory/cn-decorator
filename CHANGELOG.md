@@ -1,3 +1,23 @@
+<a name="1.0.6"></a>
+## 1.0.6 (2017-04-16)
+
+
+### Bug Fixes
+
+* **README.md:** anchors ([b37a004](https://github.com/alfa-laboratory/cn-decorator/commit/b37a004))
+* **README.md:** anchors to sections ([d21ed9e](https://github.com/alfa-laboratory/cn-decorator/commit/d21ed9e))
+* **README.md:** import for bem overrides section ([27e32ed](https://github.com/alfa-laboratory/cn-decorator/commit/27e32ed))
+* **README.md:** sections anchors ([8b15f39](https://github.com/alfa-laboratory/cn-decorator/commit/8b15f39))
+* **README.md:** themes usage section ([c58d6d6](https://github.com/alfa-laboratory/cn-decorator/commit/c58d6d6))
+* **README.md:** title size ([928565e](https://github.com/alfa-laboratory/cn-decorator/commit/928565e))
+
+
+### Features
+
+* add travis ci ([4607b97](https://github.com/alfa-laboratory/cn-decorator/commit/4607b97))
+
+
+
 <a name="1.0.5"></a>
 ## 1.0.5 (2017-04-11)
 
