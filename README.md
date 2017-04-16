@@ -14,6 +14,92 @@ Best way to use BEM with React
 
 ## BEM methodology for React <a href="#bem-react"></a>
 
+`cn decorator` provides simplest ability to generate BEM methodology classes inside React Component.
+
+### Basic example
+
+```javascript
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return <div className={ cn } />;
+    }
+}
+
+// Render result:
+// <div class="block-name"></div>
+```
+
+### Use for elements
+
+```javascript
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return (
+            <div className={ cn }>
+                <span className={ cn('some-element') } />
+            </div>
+        );
+    }
+}
+
+// Render result:
+// <div class="block-name">
+//     <span class="block-name__some-element"></span>
+// </div>
+```
+
+### Add mods
+
+```javascript
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return <div className={ cn({ mod1: true, mod2: 'value' }) } />;
+    }
+}
+
+// Render result:
+// <div class="block-name block-name_mod1 block-name_mod2_value"></div>
+```
+
+## Mods for elements
+
+```javascript
+import cn from 'cn-decorator';
+import React from 'react';
+import './my-component.css';
+
+@cn('block-name')
+class MyComponent extends React.Component {
+    render(cn) {
+        return (
+            <div className={ cn }>
+                <span className={ cn('some-element', { mod1: true }) } />
+            </div>
+        );
+    }
+}
+
+// Render result:
+// <div class="block-name">
+//     <span class="block-name__some-element block-name__some-element_mod1"></span>
+// </div>
+```
+
 ## Themes management <a href="#themes"></a>
 
 ## `className` proxy <a href="#className"></a>
