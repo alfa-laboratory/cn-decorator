@@ -1,5 +1,7 @@
 # cn decorator
 
+[![Build Status](https://travis-ci.org/alfa-laboratory/cn-decorator.svg?branch=master)](https://travis-ci.org/alfa-laboratory/cn-decorator)
+
 Best way to use BEM with React
 
 ## Features
