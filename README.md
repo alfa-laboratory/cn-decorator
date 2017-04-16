@@ -1,10 +1,26 @@
-cn decorator
-============
+# cn decorator
 
 Best way to use BEM with React
 
-License
--------
+## Features
+
+* [BEM methodology for React](#bem-react)
+* [Themes management](#themes)
+* [`className` proxy](#className)
+* [BEM overrides](#overrides)
+* [DI Components](#di-components)
+
+## BEM methodology for React <a href="#bem-react"></a>
+
+## Themes management <a href="#themes"></a>
+
+## `className` proxy <a href="#className"></a>
+
+## BEM overrides <a href="#className"></a>
+
+## DI Components <a href="#di-components"></a>
+
+## License
 
 ```
 The MIT License (MIT)
