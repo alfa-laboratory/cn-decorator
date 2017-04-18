@@ -1,6 +1,6 @@
 {
   "name": "cn-decorator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Best way to use BEM with React",
   "main": "cn.js",
   "scripts": {

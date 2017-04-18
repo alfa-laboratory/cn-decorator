@@ -1,3 +1,13 @@
+<a name="1.0.7"></a>
+## 1.0.7 (2017-04-18)
+
+
+### Bug Fixes
+
+* **README.md:** add language option ([d05e16c](https://github.com/alfa-laboratory/cn-decorator/commit/d05e16c))
+
+
+
 <a name="1.0.6"></a>
 ## 1.0.6 (2017-04-16)
 
