@@ -243,7 +243,7 @@ class MyExtendedComponent extends MyComponent {}
 `cn decorator` includes dependency injection ability.
 It can help you to override default component's composition.
 
-```
+```javascript
 // my-component.js
 import cn from 'cn-decorator';
 import React from 'react';
