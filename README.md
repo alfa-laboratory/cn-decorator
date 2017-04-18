@@ -208,7 +208,7 @@ Just use `extends` pattern to override base BEM block name.
 Use this feature to override component's styles.
 
 ```javascript
-// my-component.css
+// my-component.js
 import cn from 'cn-decorator';
 import React from 'react';
 import './my-component.css';
@@ -224,7 +224,7 @@ class MyComponent extends React.Component {
     }
 }
 
-// my-extended-component.css
+// my-extended-component.js
 import cn from 'cn-decorator';
 import MyComponent from './my-component';
 import './my-extended-component.css';
@@ -239,6 +239,45 @@ class MyExtendedComponent extends MyComponent {}
 ```
 
 ## DI Components <a href="#di-components"></a>
+
+`cn decorator` includes dependency injection ability.
+It can help you to override default component's composition.
+
+```
+// my-component.js
+import cn from 'cn-decorator';
+import React from 'react';
+import MyDepComponent from './my-dep-component';
+
+@cn('block-name', MyDepComponent)
+class MyComponent extends React.Component {
+    render(cn, MyDepComponent) {
+        return (
+            <div className={ cn }>
+                <MyDepComponent />
+            </div>
+        );
+    }
+}
+
+// Render result:
+// <div class="block-name">
+//     <div class="my-dep"></div>
+// </div>
+
+// my-overrided-component.js
+import cn from 'cn-decorator';
+import MyComponent from './my-component';
+import MyOverDepComponent from './my-over-dep-component';
+
+@cn('block-name', MyOverDepComponent)
+class MyOverridedComponent extends MyComponent {}
+
+// Render result:
+// <div class="block-name">
+//     <div class="my-over-dep"></div>
+// </div>
+```
 
 ## Utils
 
