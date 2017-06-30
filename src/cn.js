@@ -124,7 +124,7 @@ function getFunctionCn(cn, className, theme) {
  *
  * @param {Array.<String>} [themes] Optional themes list. Uses first theme as default.
  * @param {Object} [options] Optional params
- * @param {Function} [options.bem] Function bem-cn
+ * @param {BemCn} [options.bem] Function bem-cn
  * @returns {CnDecorator}
  */
 function create(themes, options = {}) {
