@@ -211,4 +211,20 @@ describe('cn', () => {
         expect(cnTest.node).to.have.class('cn-test-extended');
         expect(cnTest.node).to.have.class('cn-injected-override-test');
     });
+
+    it('should override bem-cn-fast', () => {
+        const bem = () => () => 'from-custom-bem-cn';
+        const cnWithCustomBem = cn.create([], { bem });
+
+        @cnWithCustomBem('test')
+        class CnTestComponent extends React.Component {
+            render(cn) {
+                return <div className={ cn } />;
+            }
+        }
+
+        let cnTest = render(<CnTestComponent />);
+
+        expect(cnTest.node).to.have.class('from-custom-bem-cn');
+    });
 });
