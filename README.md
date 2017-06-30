@@ -1,5 +1,7 @@
 # cn decorator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/alfa-laboratory/cn-decorator.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/alfa-laboratory/cn-decorator.svg?branch=master)](https://travis-ci.org/alfa-laboratory/cn-decorator)
 
 Best way to use BEM with React
