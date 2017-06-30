@@ -123,12 +123,16 @@ function getFunctionCn(cn, className, theme) {
  * Factory `CnDecorator`.
  *
  * @param {Array.<String>} [themes] Optional themes list. Uses first theme as default.
+ * @param {Object} [options] Optional params
+ * @param {BemCn} [options.bem] Function bem-cn
  * @returns {CnDecorator}
  */
-function create(themes) {
+function create(themes, options = {}) {
+    let _bem = options.bem || bem;
+
     function cn(componentName, ...components) {
         return function (target) {
-            target._cn = bem(componentName);
+            target._cn = _bem(componentName);
             target._cnComponents = components;
 
             if (!target.prototype.hasOwnProperty('render')) {
