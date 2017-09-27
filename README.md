@@ -26,7 +26,7 @@ import './my-component.css';
 @cn('block-name')
 class MyComponent extends React.Component {
     render(cn) {
-        return <div className={ cn } />;
+        return <div className={ cn() } />;
     }
 }
 
@@ -45,7 +45,7 @@ import './my-component.css';
 class MyComponent extends React.Component {
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn() }>
                 <span className={ cn('some-element') } />
             </div>
         );
@@ -87,7 +87,7 @@ import './my-component.css';
 class MyComponent extends React.Component {
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn() }>
                 <span className={ cn('some-element', { mod1: true }) } />
             </div>
         );
@@ -119,7 +119,7 @@ const cn = cnDecorator.create(['on-color', 'on-white']);
 @cn('block-name')
 class MyComponent extends React.Component {
     render(cn) {
-        return <div className={ cn } />;
+        return <div className={ cn() } />;
     }
 }
 
@@ -150,7 +150,7 @@ const cn = cnDecorator.create(['on-color', 'on-white']);
 @cn('block-name')
 class MyComponent extends React.Component {
     render(cn) {
-        return <div className={ cn } />;
+        return <div className={ cn() } />;
     }
 }
 
@@ -183,7 +183,7 @@ import './my-component.css';
 @cn('block-name')
 class MyComponent extends React.Component {
     render(cn) {
-        return <div className={ cn } />;
+        return <div className={ cn() } />;
     }
 }
 
@@ -217,7 +217,7 @@ import './my-component.css';
 class MyComponent extends React.Component {
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn() }>
                 <span className={ cn('some-element') } />
             </div>
         );
@@ -253,7 +253,7 @@ import MyDepComponent from './my-dep-component';
 class MyComponent extends React.Component {
     render(cn, MyDepComponent) {
         return (
-            <div className={ cn }>
+            <div className={ cn() }>
                 <MyDepComponent />
             </div>
         );
@@ -289,7 +289,7 @@ Check with unit tests
 
 `npm run test`
 
-Benckmarks
+Benchmarks
 
 `npm run test-benchmark`
 

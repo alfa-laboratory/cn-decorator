@@ -1,3 +1,6 @@
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 import React from 'react';
 import bemCn from 'bem-cn-fast';
 
@@ -15,15 +18,7 @@ const cnTest = bemCn('cn-benchmark-test');
 
 class ClosureCnTest extends React.Component {
     render() {
-        return <div className={ cnTest } />;
-    }
-}
-
-const cnTestCall = bemCn('cn-benchmark-test');
-
-class ClosureCnCallTest extends React.Component {
-    render() {
-        return <div className={ cnTestCall() } />;
+        return <div className={ cnTest() } />;
     }
 }
 
@@ -31,13 +26,6 @@ class ClosureCnCallTest extends React.Component {
 class CnTest extends React.Component {
     render(cn) {
         return <div className={ cn() } />;
-    }
-}
-
-@cn('cn-benchmark-test')
-class CnToStringTest extends React.Component {
-    render(cn) {
-        return <div className={ cn } />;
     }
 }
 
@@ -63,23 +51,9 @@ suite('cn', () => {
         teardown: cleanUp
     });
 
-    benchmark('render with `cn` in closure call', {
-        fn() {
-            render(<ClosureCnCallTest />);
-        },
-        teardown: cleanUp
-    });
-
     benchmark('render with `cn` call', {
         fn() {
             render(<CnTest />);
-        },
-        teardown: cleanUp
-    });
-
-    benchmark('render with `cn.toString()`', {
-        fn() {
-            render(<CnToStringTest />);
         },
         teardown: cleanUp
     });
