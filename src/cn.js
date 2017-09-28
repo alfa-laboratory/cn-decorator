@@ -22,16 +22,11 @@ function getFunctionCn(cn, className, theme) {
     let resultCn = function (...args) {
         let blockSelector = false;
 
-        if (typeof args[0] === 'undefined' || typeof args[0] === 'object') {
-            if (args.length === 0) {
-                if (process.env.NODE_ENV !== 'production') {
-                    // eslint-disable-next-line no-console
-                    console.warn('Performance: cn() without arguments should be called without parentheses');
-                }
+        if (args.length === 0) {
+            return cn({ theme }).toString() + (className ? ` ${className}` : '');
+        }
 
-                args.push({});
-            }
-
+        if (typeof args[0] === 'object') {
             args[0].theme = theme;
             blockSelector = true;
         }
@@ -40,6 +35,11 @@ function getFunctionCn(cn, className, theme) {
     };
 
     resultCn.toString = function () {
+        if (process.env.NODE_ENV !== 'production') {
+            // eslint-disable-next-line no-console
+            console.warn('Deprecation: do not use cn() without parentheses');
+        }
+
         return cn({ theme }).toString() + (className ? ` ${className}` : '');
     };
 
@@ -64,7 +64,7 @@ function getFunctionCn(cn, className, theme) {
  *     class MyBlock extends React.Component {
  *          render(cn) {
  *              return (
- *                  <div className={ cn } />
+ *                  <div className={ cn() } />
  *              );
  *          }
  *     }
@@ -96,7 +96,7 @@ function getFunctionCn(cn, className, theme) {
  * \@cn('phone-input', Input)
  * class PhoneInput extends React.Component {
  *     render(cn, Input) {
- *          return <Input className={ cn } />;
+ *          return <Input className={ cn() } />;
  *     }
  * }
  *
@@ -154,6 +154,14 @@ function create(themes, options = {}) {
                 target.childContextTypes = {
                     ...target.childContextTypes,
                     theme: PropTypes.string
+                };
+
+                const originalGetChildContext = target.prototype.getChildContext;
+                target.prototype.getChildContext = function () {
+                    return {
+                        ...(originalGetChildContext && originalGetChildContext.call(this)),
+                        theme: this.context.theme
+                    };
                 };
 
                 const originalRender = target.prototype.render;

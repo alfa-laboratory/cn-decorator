@@ -1,3 +1,6 @@
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 import React from 'react';
 
 import cn from './cn';
@@ -11,7 +14,7 @@ describe('cn', () => {
         @cn('cn-test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
@@ -24,7 +27,7 @@ describe('cn', () => {
         @cn('cn-test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
@@ -40,7 +43,7 @@ describe('cn', () => {
         @cn('cn-test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
@@ -56,7 +59,7 @@ describe('cn', () => {
         class CnTestComponent extends React.Component {
             render(cn) {
                 return (
-                    <div className={ cn }>
+                    <div className={ cn() }>
                         <div className={ cn('test-element') } />
                     </div>
                 );
@@ -103,7 +106,7 @@ describe('cn', () => {
             class CnTestComponent extends React.Component {
                 render(cn) {
                     return (
-                        <div className={ cn }>
+                        <div className={ cn() }>
                             <div className={ cn('test-element', { mod: true }) } />
                         </div>
                     );
@@ -121,7 +124,7 @@ describe('cn', () => {
         @cn('cn-test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
@@ -136,7 +139,7 @@ describe('cn', () => {
         @cnWithThemes('cn-test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
@@ -151,7 +154,7 @@ describe('cn', () => {
         @cnWithThemes('cn-test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
@@ -164,14 +167,14 @@ describe('cn', () => {
         @cn('cn-injected-test')
         class InjectedComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
         @cn('cn-test', InjectedComponent)
         class CnTestComponent extends React.Component {
             render(cn, InjectedComponent) {
-                return <InjectedComponent className={ cn } />;
+                return <InjectedComponent className={ cn() } />;
             }
         }
 
@@ -185,21 +188,21 @@ describe('cn', () => {
         @cn('cn-injected-test')
         class InjectedComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
         @cn('cn-injected-override-test')
         class InjectedOverrideComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
         @cn('cn-test', InjectedComponent)
         class CnTestComponent extends React.Component {
             render(cn, InjectedComponent) {
-                return <InjectedComponent className={ cn } />;
+                return <InjectedComponent className={ cn() } />;
             }
         }
 
@@ -219,7 +222,7 @@ describe('cn', () => {
         @cnWithCustomBem('test')
         class CnTestComponent extends React.Component {
             render(cn) {
-                return <div className={ cn } />;
+                return <div className={ cn() } />;
             }
         }
 
