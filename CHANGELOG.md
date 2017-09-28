@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+# 2.0.0 (2017-09-28)
+
+
+### Features
+
+* upgrade to react 16 ([48176a3](https://github.com/alfa-laboratory/cn-decorator/commit/48176a3))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2017-06-30)
 
