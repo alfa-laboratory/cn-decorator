@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import bem from 'bem-cn-fast';
+import * as React from 'react';
 
 /**
  * BEM class name factory.
@@ -44,6 +45,20 @@ function getFunctionCn(cn, className, theme) {
     };
 
     return resultCn;
+}
+
+function wrap(ComponentToWrap, className) {
+    class Wrapped extends React.Component {
+        render() {
+            return (
+                <ComponentToWrap
+                    { ...this.props }
+                    className={ `${this.props.className} ${this.props.className}-${className}` }
+                />
+            );
+        }
+    }
+    return Wrapped;
 }
 
 /**
@@ -175,7 +190,7 @@ function create(themes, options = {}) {
                     ) {
                         this._cnArgs = [
                             getFunctionCn(this.constructor._cn, currentClassName, currentTheme),
-                            ...this.constructor._cnComponents
+                            ...this.constructor._cnComponents.map(c => wrap(c, currentClassName))
                         ];
 
                         this._oldClassName = currentClassName;

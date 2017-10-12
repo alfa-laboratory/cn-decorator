@@ -184,6 +184,33 @@ describe('cn', () => {
         expect(cnTest.node).to.have.class('cn-injected-test');
     });
 
+    it('should pass additional className to injected component', () => {
+        @cn('cn-injected-test')
+        class InjectedComponent extends React.Component {
+            render(cn) {
+                return <div className={ cn() } />;
+            }
+        }
+
+        @cn('cn-test', InjectedComponent)
+        class CnTestComponent extends React.Component {
+            render(cn, InjectedComponent) {
+                return (
+                    <div className={ cn() } >
+                        <InjectedComponent className={ cn('nested') } />
+                    </div>
+                );
+            }
+        }
+
+        let cnTest = render(<CnTestComponent className='additional-class' />);
+
+        expect(cnTest.node).to.have.class('cn-test');
+        let nestedNode = cnTest.node.querySelector('.cn-test__nested');
+        expect(nestedNode).to.have.class('cn-test__nested-additional-class');
+        expect(nestedNode).to.have.class('cn-injected-test');
+    });
+
     it('should override injected component on extended class', () => {
         @cn('cn-injected-test')
         class InjectedComponent extends React.Component {
