@@ -24,7 +24,7 @@ describe('cn', () => {
     });
 
     it('should render decorated class with base css-class dash-cased component name', () => {
-        @cn()
+        @cn
         class CnTestComponent extends React.Component {
             render(cn) {
                 return <div className={ cn() } />;
