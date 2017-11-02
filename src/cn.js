@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import bem from 'bem-cn-fast';
+import decamelize from 'decamelize';
 
 /**
  * BEM class name factory.
@@ -132,7 +133,7 @@ function create(themes, options = {}) {
 
     function cn(componentName, ...components) {
         return function (target) {
-            target._cn = _bem(componentName);
+            target._cn = _bem(componentName || decamelize(target.name, '-'));
             target._cnComponents = components;
 
             if (!target.prototype.hasOwnProperty('render')) {
