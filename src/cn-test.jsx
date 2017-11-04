@@ -23,6 +23,19 @@ describe('cn', () => {
         expect(cnTest.node).to.have.class('cn-test');
     });
 
+    it('should render decorated class with base css-class dash-cased component name', () => {
+        @cn
+        class CnTestComponent extends React.Component {
+            render(cn) {
+                return <div className={ cn() } />;
+            }
+        }
+
+        let cnTest = render(<CnTestComponent />);
+
+        expect(cnTest.node).to.have.class('cn-test-component');
+    });
+
     it('should override css-class on extended class', () => {
         @cn('cn-test')
         class CnTestComponent extends React.Component {
