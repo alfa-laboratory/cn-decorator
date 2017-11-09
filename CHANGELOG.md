@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+# 2.1.0 (2017-11-09)
+
+
+### Features
+
+* use component name as bem-block name (#8) ([c25250a](https://github.com/alfa-laboratory/cn-decorator/commit/c25250a))
+
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2017-09-28)
 
