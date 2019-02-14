@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import bem from 'bem-cn-fast';
 import decamelize from 'decamelize';
 
@@ -147,28 +146,10 @@ function create(themes, options = {}) {
             }
 
             if (target.prototype.render.length >= 1) {
-                target.contextTypes = {
-                    ...target.contextTypes,
-                    theme: PropTypes.string
-                };
-
-                target.childContextTypes = {
-                    ...target.childContextTypes,
-                    theme: PropTypes.string
-                };
-
-                const originalGetChildContext = target.prototype.getChildContext;
-                target.prototype.getChildContext = function () {
-                    return {
-                        ...(originalGetChildContext && originalGetChildContext.call(this)),
-                        theme: this.context.theme
-                    };
-                };
-
                 const originalRender = target.prototype.render;
                 target.prototype.render = function () {
                     const currentClassName = this.props.className;
-                    const currentTheme = this.props.theme || this.context.theme || (themes && themes[0]);
+                    const currentTheme = this.props.theme || (themes && themes[0]);
 
                     if (!this._cnArgs
                         || this._oldClassName !== currentClassName
