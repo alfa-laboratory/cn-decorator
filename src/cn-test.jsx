@@ -276,11 +276,11 @@ describe('cn', () => {
         }
 
         let cnTest = render(
-            <ThemeProvider theme='on-color'>
+            <ThemeProvider theme='on-white'>
                 <CnTestComponent />
             </ThemeProvider>
         );
 
-        expect(cnTest.node).to.have.class('cn-test_theme_on-color');
+        expect(cnTest.node).to.have.class('cn-test_theme_on-white');
     });
 });
