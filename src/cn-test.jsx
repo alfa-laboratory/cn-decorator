@@ -2,6 +2,7 @@ import 'core-js/es6/map';
 import 'core-js/es6/set';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import cn from './cn';
 
@@ -242,5 +243,44 @@ describe('cn', () => {
         let cnTest = render(<CnTestComponent />);
 
         expect(cnTest.node).to.have.class('from-custom-bem-cn');
+    });
+
+    it('should render decorated class with theme from context', () => {
+        const cnWithThemes = cn.create(['on-color', 'on-white']);
+
+        class ThemeProvider extends React.Component {
+            static contextTypes = {
+                theme: PropTypes.string
+            };
+
+            static childContextTypes = {
+                theme: PropTypes.string
+            };
+
+            getChildContext() {
+                return {
+                    theme: this.props.theme
+                };
+            }
+
+            render() {
+                return this.props.children;
+            }
+        }
+
+        @cnWithThemes('cn-test')
+        class CnTestComponent extends React.Component {
+            render(cn) {
+                return <div className={ cn() } />;
+            }
+        }
+
+        let cnTest = render(
+            <ThemeProvider theme='on-color'>
+                <CnTestComponent />
+            </ThemeProvider>
+        );
+
+        expect(cnTest.node).to.have.class('cn-test_theme_on-color');
     });
 });
