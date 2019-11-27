@@ -1,5 +1,7 @@
 # cn decorator
 
+# NOW WE RECOMMEND TO USE [bem-react-classname](https://github.com/alfa-laboratory/bem-react-classname) EVOLVED FROM cn decorator
+
 [![Build Status](https://travis-ci.org/alfa-laboratory/cn-decorator.svg?branch=master)](https://travis-ci.org/alfa-laboratory/cn-decorator)
 
 Best way to use BEM with React
